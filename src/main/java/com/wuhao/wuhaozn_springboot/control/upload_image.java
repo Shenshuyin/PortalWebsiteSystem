@@ -1,6 +1,8 @@
 package com.wuhao.wuhaozn_springboot.control;
 
 
+import com.wuhao.wuhaozn_springboot.bean.product_bean;
+import com.wuhao.wuhaozn_springboot.portal_service.product_service;
 import com.wuhao.wuhaozn_springboot.server.image_service;
 import com.wuhao.wuhaozn_springboot.util.StateUtil;
 import com.wuhao.wuhaozn_springboot.util.Uploadimage_load;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
@@ -21,7 +25,8 @@ import java.util.UUID;
 @Controller
 public class upload_image {
 
-
+    @Autowired
+    product_service productService;
 
     @PostMapping("/upload_image")
     @ResponseBody
@@ -63,6 +68,35 @@ public class upload_image {
 
 //        2.用 service 更新数据库信息
         return "page/upload";
+    }
+
+    @GetMapping("/search")
+    public String search(String prodId, HttpServletRequest request){
+//        product_bean targetProd = productService.getProdById(prodId);
+//        HttpSession session = request.getSession();
+//        System.out.println("targetProd = " + targetProd);
+//        session.setAttribute("targetProd", targetProd);
+        System.out.println("Already reach backend search!");
+        return "page/modify";
+    }
+
+    @GetMapping("/searchData")
+    public product_bean searchData(String prodId){
+        product_bean targetProd = productService.getProdById(prodId);
+        System.out.println("targetProd = " + targetProd);
+        return targetProd;
+    }
+
+    @PostMapping("/modify")
+    public String modify(String productId){
+//        1.用 service 查询传进来的信息
+        product_bean targetProd = productService.getProdById(productId);
+
+
+//        2.用 service 更新数据库信息
+
+
+        return "page/modify";
     }
 
 }
