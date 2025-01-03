@@ -3,8 +3,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://47.100.89.227:3306/kxj_database?useUnicode=true&characterEncoding=utf8
 #    url: jdbc:mysql://192.168.10.100:3306/kxj_database?useUnicode=true&characterEncoding=utf8
+#    url: jdbc:mysql://localhost:3306/kxj_database?useUnicode=true&characterEncoding=utf8
     username: root
     password: Abcd_12345678
+#    password: NFjd123@@@
   servlet:
     multipart:
       max-file-size: 10MB

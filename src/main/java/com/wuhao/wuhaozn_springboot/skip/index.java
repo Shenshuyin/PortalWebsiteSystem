@@ -10,6 +10,7 @@ import com.wuhao.wuhaozn_springboot.portal_service.slideshow_service;
 import com.wuhao.wuhaozn_springboot.server.company_service;
 import com.wuhao.wuhaozn_springboot.server.patents_service;
 import com.wuhao.wuhaozn_springboot.server.product_ser;
+import com.wuhao.wuhaozn_springboot.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,9 +51,9 @@ public String log(HttpSession session){
 
     Random random = new Random();
     List<product_bean> list1=productService.select_product();
-    if(list1.size()!=0) {
+    if (!CollectionUtils.isEmpty(list1)){
         List<product_bean> list2 = new ArrayList<>();
-//        System.out.println("list1 = " + list1);
+        System.out.println("list1 = " + list1);
 
 //        for (int i = 0; i < 3; i++) {
         for (int i = 0; i < (list1.size() >= 3 ? 3 : list1.size()); i++) {
@@ -61,11 +62,6 @@ public String log(HttpSession session){
             list2.add(list1.get(i));// 暂时更改！
         }
         session.setAttribute("cp", list2);
-    }else {
-        product_bean wran =new product_bean();
-        wran.setProduct_image("/layuimini/images/400.jpg");
-        list1.add(wran);
-        session.setAttribute("cp",list1);
     }
 
     List<patents_bean> list3=patentsService.select_patents();
