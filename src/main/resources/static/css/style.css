@@ -1050,7 +1050,7 @@ button {
 #wechat {
     position: fixed;       /* 固定位置 */
     top: 50%;              /* 初始位置在垂直方向上居中 */
-    right: 0;              /* 图片靠右 */
+    left: 0;              /* 图片靠右 */
     transform: translateY(-50%); /* 向上移动图片的一半高度，使其垂直居中 */
     z-index: 1000;         /* 确保图片在其他内容之上 */
 }
