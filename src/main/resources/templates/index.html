@@ -24,6 +24,23 @@
       <meta name="description" content="机器视觉缺陷检测系统，检测内容包含模板对比、色差检测、OCR 文字识别、条码识别检测、二维码识别检测、脏点、白页、漏印错印等印刷缺陷检测；检测同时支持在线和离线检测、机器视觉检测">
       <meta name="author" content="上海深树荫">
       <link th:include="common :: common_head">
+       <style>#wechat-container {
+           position: relative;
+           display: inline-block; /* 使容器仅包裹内容 */
+       }
+       #close-btn {
+           position: absolute;
+           top: -10px; /* 调整位置，使按钮位于右上角 */
+           right: -10px; /* 调整位置，使按钮位于右上角 */
+           background: red; /* 设置背景颜色 */
+           color: white; /* 设置文字颜色 */
+           border: none; /* 去除边框 */
+           cursor: pointer; /* 鼠标悬停时显示手形光标 */
+           font-size: 16px; /* 设置字体大小 */
+           line-height: 1; /* 设置行高 */
+           padding: 5px; /* 设置内边距 */
+       }
+       </style>
    </head>
    <body>
 <!--   <link rel="stylesheet" href="http://129.211.30.106/assets/css/index/ymwl_online.css">-->
