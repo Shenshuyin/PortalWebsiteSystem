@@ -249,8 +249,18 @@
       <div th:replace="common :: common_src"></div>
 
 <!--      <img id="wechat" src="images/wechat.png" />-->
-      <img id="wechat" src="images/wechat.png" />
+<!--      <img id="wechat" src="images/wechat.png" />-->
 
+        <div id="wechat-container">
+            <img id="wechat" src="images/wechat.png" />
+            <button id="close-btn" onclick="closeWechat()">×</button>
+        </div>
+        <script>
+            function closeWechat() {
+                var wechatContainer = document.getElementById('wechat-container');
+                wechatContainer.style.display = 'none'; // 隐藏整个容器，包括图片和关闭按钮
+            }
+        </script>
       <script type="application/javascript">
 
       //show_detailpage_gy
