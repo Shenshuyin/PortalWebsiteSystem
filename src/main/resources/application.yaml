@@ -28,6 +28,14 @@ server:
     key-store-password: 4is66a0i    #填写jks-password.txt文件内的密码。
     key-store-type: JKS #JKS格式证书密钥库类型。PFX格式的证书密钥库类型为PKCS12。
     key-store: classpath:shenshuyin.com.jks
+  servlet:
+    session:
+      tracking-modes: COOKIE
+  compression:
+    enabled: true
+    mime-types: text/html,text/css,text/javascript,application/javascript,image/png,image/jpeg
+    min-response-size: 1024
+
 logging:
   level:
     root: WARN
@@ -37,3 +45,4 @@ logging:
     name: web_log
 #imagepath: E:\shenshuyinweb\PortalWebsiteSystem\images\
 imagepath: /enterprise_website/images/
+#imagepath: https://images.hnzhrh.com/note/

@@ -9,7 +9,6 @@
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
-<!--<script src="http://129.211.30.106/assets/front/ymwl_1.js?v=1738933424" charset="UTF-8"></script>-->
    <head>
       <!-- basic -->
       <meta charset="utf-8">
@@ -32,7 +31,7 @@
            position: absolute;
            top: -10px; /* 调整位置，使按钮位于右上角 */
            right: -10px; /* 调整位置，使按钮位于右上角 */
-           background: red; /* 设置背景颜色 */
+           background: whitesmoke; /* 设置背景颜色 */
            color: white; /* 设置文字颜色 */
            border: none; /* 去除边框 */
            cursor: pointer; /* 鼠标悬停时显示手形光标 */
@@ -43,19 +42,14 @@
        </style>
    </head>
    <body>
-<!--   <link rel="stylesheet" href="http://129.211.30.106/assets/css/index/ymwl_online.css">-->
-<!--   <div class="ymwl-form" id="ymwl-kefu" style='background-color:#197971'>-->
-<!--       <i class="ymwl-icon"></i>-->
-<!--       <form class="ymwl-item" action="http://129.211.30.106/index/index/home?theme=7571f9&visiter_id=&visiter_name=&avatar=&business_id=1&groupid=0" method="post" target="_blank" ><input type="hidden" name="product" value=""><input type="submit" value="点击在线咨询">-->
-<!--       </form>-->
-<!--   </div>-->
 
     <link rel="stylesheet" href="https://81.69.42.176/assets/css/index/ymwl_online.css">
-    <div class="ymwl-form" id="ymwl-kefu" style='background-color:#197971'>
+    <div class="ymwl-form" id="ymwl-kefu" style='background-color:#197971' onclick="document.querySelector('.ymwl-item').submit()">
         <i class="ymwl-icon"></i>
         <form class="ymwl-item" action="https://81.69.42.176/index/index/home?theme=067d31&visiter_id=&visiter_name=&avatar=&business_id=1&groupid=0" method="post" target="_blank" ><input type="hidden" name="product" value=""><input type="submit" value="点此在线咨询">
         </form>
     </div>
+
       <!-- header section start -->
       <div class="header_section">
          <div class="header_main">
@@ -171,6 +165,7 @@
                <div class="row">
                   <div class="col-md-4" th:each="cp,item :${session.cp}">
                      <div><img style="width: 400px;height: 400px" th:src="@{${cp.product_image}}" class="services_img"></div>
+<!--                     <div><img style="width: 400px;height: 400px" th:src="@{https://images.hnzhrh.com/note/d910577a-42cb-41ae-be2f-100143bc8b0c.png}" class="services_img"></div>-->
                      <div class="btn_main"><a th:href="@{/services}">产品详情</a></div>
 <!--                     <div class="btn_main"><a href="#" class="a_detailpage2">产品详情</a></div> &lt;!&ndash; 应该是某个产品对应的 detailpages_services页面 &ndash;&gt;-->
                   </div>
