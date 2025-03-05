@@ -19,25 +19,26 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>深树荫机器视觉检测缺陷检测印刷检测</title>
-      <meta name="keywords" content="印刷缺陷检测_印刷品质量检_印刷检测软件_检测算法定制_二次开发接口提供_机器视觉检测">
-      <meta name="description" content="机器视觉缺陷检测系统，检测内容包含模板对比、色差检测、OCR 文字识别、条码识别检测、二维码识别检测、脏点、白页、漏印错印等印刷缺陷检测；检测同时支持在线和离线检测、机器视觉检测">
+      <meta name="keywords" content="机器视觉缺陷检测系统,检测内容包含模板对比,色差检测,OCR 文字识别,条码识别检测,二维码识别检测,脏点,白页,漏印错印等印刷缺陷检测,检测同时支持在线和离线检测,机器视觉检测">
+      <meta name="description" content="印刷缺陷检测_印刷品质量检_印刷检测软件_检测算法定制_二次开发接口提供_机器视觉检测">
       <meta name="author" content="上海深树荫">
       <link th:include="common :: common_head">
-       <style>#wechat-container {
-           position: relative;
+       <style> #wechat-container {
+           position: relative; /* 确保这是一个定位上下文 */
            display: inline-block; /* 使容器仅包裹内容 */
+           /* 添加以下内容以确保容器有足够的高度和宽度 */
+           width: 180px; /* 根据您的图片大小调整宽度 */
+           height: 300px; /* 根据您的图片大小调整高度 */
        }
-       #close-btn {
+       .close-btn {
            position: absolute;
-           top: -10px; /* 调整位置，使按钮位于图片右上角 */
-           right: -10px; /* 调整位置，使按钮位于图片右上角 */
-           background: whitesmoke; /* 设置背景颜色 */
-           color: white; /* 设置文字颜色 */
-           border: none; /* 去除边框 */
-           cursor: pointer; /* 鼠标悬停时显示手形光标 */
-           font-size: 16px; /* 设置字体大小 */
-           line-height: 1; /* 设置行高 */
-           padding: 5px; /* 设置内边距 */
+           top: 0; /* 调整位置，使按钮位于图片右上角 */
+           right: 0; /* 调整位置，使按钮位于图片右上角 */
+           cursor: pointer;
+           font-size: 24px;
+           background-color: rgba(255, 255, 255, 0.8);
+           border: none;
+           padding: 5px;
        }
        </style>
    </head>
@@ -260,7 +261,7 @@
 <!--      <img id="wechat" src="images/wechat.png" />-->
         <div id="wechat-container">
             <img id="wechat" src="images/wechat.png" />
-            <button id="close-btn" onclick="closeWechat()">×</button>
+            <button class="close-btn" onclick="closeWechat()">×</button>
         </div>
         <script>
             function closeWechat() {
